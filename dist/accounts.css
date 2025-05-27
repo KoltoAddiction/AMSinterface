@@ -1,0 +1,157 @@
+#accountsScreen {
+    background-color: #1c3508;
+}
+#accountsContent {
+    color: #e8fce5;
+    text-shadow: 1px 1px 2px #bafcbd, 0 0 1em #bafcbd, 0 0 0.2em #bafcbd;
+}
+#accountsBackButton {
+    color: #e8fce5;
+    text-shadow: 1px 1px 2px #bafcbd, 0 0 1em #bafcbd, 0 0 0.2em #bafcbd;
+}
+#accountsBackButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #e8fce5;
+    box-shadow: 1px 1px 2px #bafcbd, 0 0 1em #bafcbd, 0 0 0.2em #bafcbd;
+}
+#accountsLogout {
+    filter:hue-rotate(112.17deg);
+}
+#accountsReauth:hover {
+    background-color: #e8fce5;
+    box-shadow: 1px 1px 2px #bafcbd, 0 0 1em #bafcbd, 0 0 0.2em #bafcbd;
+}
+
+.account {
+    width: 23%;
+    height: 100%;
+    margin-left: 12px;
+    margin-right: 12px;
+    border-style: solid;
+    display: inline-block;
+    box-shadow: 1px 1px 2px #bafcbd, 0 0 1em #bafcbd, 0 0 0.2em #bafcbd;
+}
+.account h1 {
+    margin-top:60px;
+    width: 100%;
+    text-align: center;
+}
+.account h2 {
+    width: 100%;
+    text-align: center;
+}
+.balStatement {
+    font-size: 40px;
+    margin-top: 200px;
+    margin-bottom: 0px;
+    float: center;
+}
+.balance {
+    font-size: 52px;
+    margin-top: 0px;
+}
+
+.transferButton {
+    font-family:VT323;
+    background: none;
+    outline: none;
+    border: none;
+    color: #e8fce5;
+    text-shadow: 1px 1px 2px #bafcbd, 0 0 1em #bafcbd, 0 0 0.2em #bafcbd;
+    padding: 10px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    bottom: 60px;
+}
+.transferButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #e8fce5;
+    box-shadow: 1px 1px 2px #bafcbd, 0 0 1em #bafcbd, 0 0 0.2em #bafcbd;
+}
+#closeTransferPopup:hover, #closeHYEP:hover, #closeSE:hover {
+    background-color: #e8fce5;
+    box-shadow: 1px 1px 2px #bafcbd, 0 0 1em #bafcbd, 0 0 0.2em #bafcbd;
+}
+.popupTitle {
+    margin-top: 12px;
+    left: 50%;
+    font-size: 64px;
+}
+#transferPopup, #highYieldErrorPopup, #savingsErrorPopup, #refreshNotification {
+    width: 500px;
+    height: 450px;
+    background-color: #1c3508;
+    box-shadow: 1px 1px 2px #bafcbd, 0 0 1em #bafcbd, 0 0 0.2em #bafcbd;
+    border-style: solid;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+#transferAmount, #submitTransfer {
+    position: fixed;
+    font-family:VT323;
+    
+    font-size: 50px;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: #1c3508;
+    border-radius: 0;
+    color: #e8fce5;
+    text-shadow: 1px 1px 2px #bafcbd, 0 0 1em #bafcbd, 0 0 0.2em #bafcbd;
+}
+#transferAmount {
+    top: 23%;
+    width: 80%;
+    border-color: #e8fce5;
+    border-style: solid;
+}
+#submitTransfer {
+    top: 85%;
+    border-style: none;
+    padding: 5px;
+}
+#submitTransfer:hover {
+    background-color: #e8fce5;
+    box-shadow: 1px 1px 2px #bafcbd, 0 0 1em #bafcbd, 0 0 0.2em #bafcbd;
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+}
+#transferAmount:focus {
+    outline: none;
+    box-shadow: 1px 1px 2px #bafcbd, 0 0 1em #bafcbd, 0 0 0.2em #bafcbd;
+}
+#accountRadio {
+    position: fixed;
+    top:40%;
+    font-size: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+#accountRadio input[type="radio"]:checked ~ * { 
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #e8fce5;
+    box-shadow: 1px 1px 2px #bafcbd, 0 0 1em #bafcbd, 0 0 0.2em #bafcbd;
+}
+#accountRadio span {
+    font-size: 40px;
+    text-align: center;
+    padding: 4px;
+    border-radius: 0;
+    position: relative;
+}
+.accountOption {
+    display: none;
+    
+}
+.errorMessage {
+    font-size: 36px;
+    padding: 10px;
+}

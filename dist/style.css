@@ -1,0 +1,181 @@
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.blackbackground {
+    background-color: black;
+}
+
+.screen{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display:grid;
+}
+
+#scan, #bezel{
+    position: absolute;
+    width:100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+#bezel{
+    height:100%;
+}
+
+#scan{
+    opacity: 75%;
+    height: 300%;
+    animation: slide 60s linear infinite;
+}
+
+.content{
+    font-family: VT323;
+    padding-left:4%;
+    padding-right:4%;
+    padding-top:1%;
+    padding-bottom:1%;
+    position:relative;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+.header img, h1, span, input {
+    float: left;
+    text-align: center;
+    font-size: 64px;
+    line-height: 40px;
+    border-radius: 4px;
+}
+
+.header-right {
+    float: right;
+}
+
+.footer {
+    font-size:24px;
+    position: absolute;
+    bottom: 32px;
+}
+.reauth {
+    font-size: 24px;
+    position: absolute;
+    right: 76px;
+    bottom: 32px;
+    cursor: pointer;
+    
+}
+.reauth:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+}
+
+
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    padding-top:30px;
+    padding-right:16px;
+}
+
+.logout {
+    width: 64px;
+    height: 64px;
+    padding-top:32px;
+    padding-left:32px;
+}
+.logout:hover {
+    content:url("../assets/hover/door_hover.png")
+}
+.username {
+    padding-top: 40px;
+}
+
+.backButton {
+    font-family:VT323;
+    background: none;
+    outline: none;
+    border: none;
+    padding: 10px;
+    margin-bottom:8px;
+    position:absolute;
+    top:50px;
+}
+
+
+.menu {
+    position: absolute;
+    width: 91%;
+    height: 75%;
+    top: 15%;
+    text-align: center;
+    left:49.75%;
+    transform: translate(-50%, 0);
+}
+
+
+@keyframes slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, -50%, 0);
+    }
+}
+
+@keyframes turnon {
+    0% {
+        opacity: 0%;
+    }
+    66.6% {
+        opacity: 0%;
+    }
+    75% {
+        opacity: 70%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.modal {
+    position: fixed;
+    display: none;
+    z-index: 2;
+    overflow: auto;
+}
+.closeModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 16px;
+    margin-top: 20px;
+    border-radius: 0;
+}
+.closeModal:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+
+}
+.submenu {
+    width: 100%;
+    height: 100%;
+}
+

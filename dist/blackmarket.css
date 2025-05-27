@@ -1,0 +1,255 @@
+#blackmarketScreen {
+    background-color:  #1A1A1A;
+}
+#blackmarketContent {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+}
+#blackmarketBackButton {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+}
+#blackmarketBackButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+}
+#blackmarketLogout {
+    filter:grayscale();
+}
+#blackmarketReauth:hover {
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+}
+#blackmarketMenu {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    gap: 5px;
+}
+#blackmarketMenu > * {
+    flex: 1 1 auto; /* Allow elements to shrink and grow */
+    min-height: 0; /* Prevent flex children from exceeding bounds */
+    box-sizing: border-box;
+}
+#itemMenu {
+    display: none;
+}
+#invMenuButtons {
+    z-index: 2;
+}
+.invMenuButton {
+    font-family:VT323;
+    background: none;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+    padding: 10px;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+.invMenuButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+}
+.invMenuButtonSelected {
+    font-family:VT323;
+    background: none;
+    outline: none;
+    border: none;
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+    padding: 10px;
+    border-radius: 0;
+}
+#itemInventory, #gearInventory {
+    border-style: solid;
+    width:60%;
+    height:100%;
+    box-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.itemIcon, .gearIcon {
+    width: 12.5%;
+    aspect-ratio: 1 / 1;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    box-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.itemPNG, .gearPNG {
+    object-fit: contain;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    filter:grayscale();
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+}
+.itemQuantity, .gearQuantity {
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    text-align: right;
+}
+
+#selItemInfo, #noSelItemInfo, #selGearInfo, #noSelGearInfo {
+    width:37%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-style: solid;
+    box-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+    position: absolute;
+}
+#selItemInfo, #selGearInfo {
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-items: flex-start;
+    height: 100%;
+}
+#noSelItemInfo, #noSelGearInfo {
+    display: flex;
+    flex-direction: row;
+}
+.itemInfo, .gearInfo {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#noItemSelectedNotice, #noSlotSelectedNotice, #noGearSelectedNotice, #noStockNotice, #noStockSelectedNotice {
+    font-size: 50px;
+    align-self: center;
+    flex: 1 1 auto; /* Flexible width */
+    max-width: 100%; /* Prevent overflow */
+    word-wrap: break-word; /* Ensure text wraps */
+    position: absolute;
+    padding: 50px;
+}
+#imgQuantity, #imgQuantityGear {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25%;
+    aspect-ratio: 1/1;
+    border-left: solid;
+    border-bottom: solid;
+    box-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    background-color: #1A1A1A;
+}
+#itemImage, #gearImage {
+    object-fit: contain;
+    padding: 16px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    margin: 0;
+    filter:grayscale();
+}
+#amountOwned, #gearAmountOwned {
+    font-size: 48px;
+    position: absolute;
+    right: 6px;
+    bottom: 0;
+    text-align: right;
+    padding: 2%;
+}
+#collectName, #collectNameGear {
+    width: 75%;
+    box-sizing: border-box;
+    text-align: center;
+    display:grid;
+    place-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+#itemCollection, #gearCollection {
+    padding-top: 16px;
+    font-size: 40px;
+    padding-bottom: 8px;
+}
+#itemName, #gearName {
+    padding-bottom: 8px;
+    font-size: 64px;
+    padding-top: 8px;
+}
+
+#otherInfo, #otherInfoGear {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#buttons, #gearButtons {
+    position: absolute;
+    bottom: 32px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 32px;
+}
+#quanToBuy, #gearQuanToBuy {
+    font-family:VT323;
+    background-color: #1A1A1A;
+    border-radius: 0;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+    font-size: 50px;
+    width: 64px;
+    height: 64px;
+}
+#purchaseButton, #gearPurchaseButton {
+    font-family:VT323;
+    background: none;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#purchaseButton:hover, #gearPurchaseButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px #bdbdbd, 0 0 1em #bdbdbd, 0 0 0.2em #bdbdbd;
+}
+
+#itemRarity, #gearRarity {
+    font-size: 50px;
+    padding-top: 30px;
+}
+#itemValue, #gearValue {
+    font-size: 36px;
+}
+#itemDescription, #gearDescription {
+    width: 90%;
+    font-size: 40px;
+    padding: 66px 5% 5% 5%;
+}

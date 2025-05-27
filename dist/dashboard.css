@@ -1,0 +1,197 @@
+#dashboardScreen {
+    background-color: #153f3e;
+}
+#dashboardScreenFromIndex {
+    background-color: #153f3e;
+    animation: turnon 4s;
+}
+#dashboardContent {
+    color: #e5f4fc;
+    text-shadow: 1px 1px 2px #bae5fc, 0 0 1em #bae5fc, 0 0 0.2em #bae5fc;
+}
+#dashboardLogout {
+    filter:hue-rotate(200.87deg);
+}
+#dashboardReauth:hover {
+    background-color: #e5f4fc;
+    box-shadow: 1px 1px 2px #bae5fc, 0 0 1em #bae5fc, 0 0 0.2em #bae5fc;
+}
+
+#menu {
+    display:grid;
+    float:left;
+    position: absolute;
+    top: 150px;
+    z-index: 5;
+    justify-items: left;
+}
+
+.menubutton {
+    font-size:48px;
+    font-family:VT323;
+    background: none;
+    outline: none;
+    border: none;
+    padding: 10px;
+    color: #e5f4fc;
+    text-shadow: 1px 1px 2px #bae5fc, 0 0 1em #bae5fc, 0 0 0.2em #bae5fc;
+    margin-bottom:8px;
+}
+.menubutton:hover {
+    color: black;
+    background-color: #e5f4fc;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    box-shadow: 1px 1px 2px #bae5fc, 0 0 1em #bae5fc, 0 0 0.2em #bae5fc;
+}
+
+#display0 {
+    display:grid;
+    margin-left:17%;
+    width:800px;
+    height:75%;
+    position: absolute;
+    top: 150px;
+    z-index: 5;
+}
+#asciiDisplay {
+    justify-self: center;
+    align-self: center;
+    max-width: 800px;
+    max-height: 90%;
+}
+
+#userinfo {
+    display:grid;
+    margin-left:63%;
+    width:550px;
+    height:75%;
+    position: absolute;
+    top: 150px;
+    z-index: 5;
+    border-style:inset;
+    box-shadow: 1px 1px 2px #bae5fc, 0 0 1em #bae5fc, 0 0 0.2em #bae5fc;
+}
+
+#rankicon {
+    height: 128px;
+    width: 128px;
+    margin-top: 16px;
+    margin-left: 24px;
+}
+
+#rankname {
+    font-size: 48px;
+    position:absolute;
+    right: 40px;
+    top: 12px;
+    width: 60%;
+    text-align: center;
+}
+
+#level {
+    font-size: 28px;
+    position:absolute;
+    top: 60px;
+    left: 168px;
+}
+
+#levelprogress {
+    position:absolute;
+    top: 103px;
+    left: 275px;
+    width: 46%;
+    border: hidden;
+    height: 5px;
+    accent-color:#e5f4fc;
+    background:#153f3e;
+    box-shadow: 1px 1px 2px #bae5fc, 0 0 1em #bae5fc, 0 0 0.2em #bae5fc;
+}
+
+/* Firefox: Filled portion of the progress bar */
+progress::-moz-progress-bar {
+    accent-color:#e5f4fc;
+    background: currentColor;
+}
+
+/* Chrome & Safari: Unfilled portion of the progress bar */
+progress::-webkit-progress-bar {
+    accent-color:#e5f4fc;
+    background: #153f3e;
+}
+
+/* Chrome & Safari: Filled portion of the progress bar */
+progress::-webkit-progress-value {
+    accent-color:#e5f4fc;
+    background: currentColor;
+}
+
+.info {
+    font-size: 36px;
+    position:absolute;
+    width: 100%;
+    text-align: center;
+}
+
+#legacylevel {
+    top:125px;
+}
+#prestige {
+    top:175px;
+}
+#weeklyExp {
+    top:225px;
+}
+#stipend {
+    top:275px;
+}
+#balChecking {
+    top:325px;
+}
+#balSavings {
+    top:375px;
+}
+#balOffshore {
+    top:425px;
+}
+#balHighYield {
+    top:475px;
+}
+#nextBlackMarket {
+    top:525px
+}
+#balHCoin {
+    top: 575px;
+}
+#specialWord{
+    top: 625px;
+}
+
+#closeCS:hover, #closeBMY:hover {
+    background-color: #e5f4fc;
+    box-shadow: 1px 1px 2px #bae5fc, 0 0 1em #bae5fc, 0 0 0.2em #bae5fc;
+}
+.popupTitle {
+    margin-top: 12px;
+    left: 50%;
+    font-size: 64px;
+    text-align: center;
+}
+#comingSoonPopup, #notBMYet {
+    width: 500px;
+    height: 350px;
+    background-color: #153f3e;
+    box-shadow: 1px 1px 2px #bae5fc, 0 0 1em #bae5fc, 0 0 0.2em #bae5fc;
+    border-style: solid;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    z-index: 6;
+}
+.errorMessage {
+    font-size: 48px;
+    padding: 10px;
+    left: 50%;
+    text-align: center;
+}

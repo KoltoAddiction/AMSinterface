@@ -1,0 +1,377 @@
+#bountiesScreen {
+    background-color:  #350808;
+}
+#bountiesContent {
+    color: #fce5e5;
+    text-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+}
+#bountiesBackButton {
+    color: #fce5e5;
+    text-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+}
+#bountiesBackButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #fce5e5;
+    box-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+}
+#bountiesLogout {
+    filter:hue-rotate(0deg)
+}
+#bountiesReauth:hover {
+    background-color: #fce5e5;
+    box-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+}
+#bountiesMenu {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+#bountiesMenu * {
+    box-sizing: border-box;
+}
+#bountyBoard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 30%;
+}
+#bountyInfo {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 33%;
+    border: solid;
+    box-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+}
+#confirmationMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 33%;
+    border: solid;
+    box-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+}
+#bountyBoardTitle {
+    margin: 0;
+    height: 10%;
+}
+#bounties {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 100%;
+    border: solid;
+    box-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+    overflow-y: scroll;
+}
+.bountyRow {
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid;
+    box-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+    justify-content: space-between;
+}
+.bountyTag {
+    font-size: 100px;
+    margin: 0;
+    padding: 50px 0px 50px 30px;
+}
+.bountyCol {
+    height: 100%;
+    width: 78%;
+    display: flex;
+    flex-direction: column;
+}
+.bountySubRow1 {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: last baseline;
+    padding-right: 30px;
+    padding-left: 30px
+}
+.bountySubRow2 {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: first baseline;
+    padding-right: 30px;
+    padding-left: 30px
+}
+.bountySubRow1 h2 {
+    margin: 0;
+    font-size: 32px;
+}
+.bountySubRow2 h2 {
+    margin: 0;
+    font-size: 28px;
+}
+#noneSelNotice {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#selBountyInfo {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    overflow-y:scroll;
+}
+.gearStatsTable div {
+    display: flex;
+    flex-direction: column;
+}
+.gearStatsTable span {
+    font-size: 28px;
+}
+.gstHeader {
+    font-size: 32px;
+    border-bottom: solid;
+}
+.gearStatsTable {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: auto;
+    box-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+    padding: 0 20px 20px 20px;
+    background: rgba(0,0,0,0.5);
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#gstColumns {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+#selBountyInfo div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+#selBountyTag, #selBountyType, #selBountyDiff, #selBountyPayType {
+    font-size: 32px;
+    text-align: center;
+}
+#selBountyName {
+    font-size: 48px;
+    width: 100%;
+    padding: 30px 40px 30px 40px;
+}
+#selBountyBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.selBountyBodyCol {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.selBountyBodyCol h2 {
+    margin: 0;
+    font-size: 50px;
+}
+.selBountyBodyCol h3 {
+    margin: 0;
+    font-size: 32px;
+    padding-top: 20px;
+}
+#selBountyInfo h2 {
+    padding-top: 10px;
+    margin: 0;
+    font-size: 40px;
+}
+#selBountyInfo h3 {
+    padding: 20px;
+    margin: 0;
+    font-size: 32px;
+}
+#huntButton {
+    font-family:VT323;
+    font-size: 84px;
+    background: none;
+    outline: none;
+    border: none;
+    color: #fce5e5;
+    text-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+    border-radius: 4px;
+    height: 100px;
+    width: 100%;
+}
+#huntButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #fce5e5;
+    box-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+}
+#recommendedStats {
+    width: -webkit-calc(100% - 250px);
+    width:    -moz-calc(100% - 250px);
+    width:         calc(100% - 250px);
+    display: flex;
+    flex-direction: column;
+    height: 230px;
+}
+#recommendedStats h2 {
+    margin: 0;
+    font-size: 40px;
+}
+#recommendedStats h3 {
+    margin: 0;
+    font-size: 32px;
+    padding: 20px 0 20px 0;
+}
+#payoutInfo {
+    display:flex;
+    flex-direction: row;
+    height: 200px;
+    margin-top: 10px;
+}
+#payoutInfo div {
+    display:flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    justify-content: center;
+}
+#payoutInfo h2 {
+    margin: 0;
+    font-size: 40px;
+    padding: 0;
+}
+#payoutInfo h3 {
+    margin: 0;
+    font-size: 32px;
+    padding: 0;
+}
+#cancelButton {
+    font-family:VT323;
+    font-size: 84px;
+    background: none;
+    outline: none;
+    border: none;
+    color: #fce5e5;
+    text-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+    border-radius: 4px;
+    height: 100px;
+    width: 80%;
+}
+#cancelButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #fce5e5;
+    box-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+}
+#cancelMenu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#cancelMenu h2 {
+    font-size: 72px;
+    padding: 0;
+    padding-bottom: 20px;
+    margin: 0;
+}
+#cancelMenu h3 {
+    font-size: 36px;
+    padding: 0;
+    margin: 0;
+}
+#currentBounty {
+    padding-top: 30px;    
+    font-size: 84px;
+    padding-bottom: 30px;
+}
+#resultModal {
+    width: 800px;
+    padding-bottom: 120px;
+    background-color: #350808;
+    box-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+    border-style: solid;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 9;
+}
+#modalOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* dark semi-transparent */
+    z-index: 8;
+}
+.modal-content {
+    height: auto;
+}
+.modal-content h1 {
+    width: 100%;
+    font-size: 86px;
+    text-align: center;
+}
+.modal-content h2 {
+    margin: 0;
+    width: 100%;
+    font-size: 64px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+#additionalExclam {
+    margin: 0;
+    width: 100%;
+    font-size: 64px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.modal-content h3 {
+    margin: 0;
+    width: 100%;
+    font-size: 42px;
+    text-align: center;
+}
+#claimButton {
+    font-family:VT323;
+    font-size: 76px;
+    background: none;
+    outline: none;
+    border: none;
+    color: #fce5e5;
+    text-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+    border-radius: 4px;
+    height: 100px;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+}
+#claimButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #fce5e5;
+    box-shadow: 1px 1px 2px #fcbaba, 0 0 1em #fcbaba, 0 0 0.2em #fcbaba;
+}

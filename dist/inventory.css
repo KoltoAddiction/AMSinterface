@@ -1,0 +1,535 @@
+#inventoryScreen {
+    background-color: #35082e;
+}
+#inventoryContent {
+    color: #fce5fa;
+    text-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+}
+#inventoryBackButton {
+    color: #fce5fa;
+    text-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+}
+#inventoryBackButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #fce5fa;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+}
+#inventoryLogout {
+    filter:hue-rotate(305.34deg)
+}
+#inventoryReauth:hover {
+    background-color: #fce5fa;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+}
+
+#invMenu {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    gap: 5px;
+}
+#invMenu > * {
+    flex: 1 1 auto; /* Allow elements to shrink and grow */
+    min-height: 0; /* Prevent flex children from exceeding bounds */
+    box-sizing: border-box;
+}
+#itemMenu {
+    display: none;
+}
+#gearMenu {
+    display: none;
+    gap: 40px;
+}
+#stocksMenu {
+    display: none;
+    gap: 40px;
+    flex-direction: row;
+}
+#invMenuButtons {
+    z-index: 2;
+}
+.invMenuButton {
+    font-family:VT323;
+    background: none;
+    outline: none;
+    border: none;
+    color: #fce5fa;
+    text-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+    padding: 10px;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+.invMenuButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #fce5fa;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+}
+.invMenuButtonSelected {
+    font-family:VT323;
+    background: none;
+    outline: none;
+    border: none;
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #fce5fa;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+    padding: 10px;
+    border-radius: 0;
+}
+#itemInventory {
+    border-style: solid;
+    width:60%;
+    height:100%;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.itemIcon {
+    width: 12.5%;
+    aspect-ratio: 1 / 1;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.itemPNG {
+    object-fit: contain;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.itemQuantity {
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    text-align: right;
+}
+
+#selItemInfo, #noSelItemInfo {
+    width:37%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-style: solid;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+    position: absolute;
+}
+#selItemInfo, #selectedGearInfo {
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-items: flex-start;
+    height: 100%;
+}
+#noSelItemInfo {
+    display: flex;
+    flex-direction: row;
+}
+.itemInfo, .gearInfo {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#noItemSelectedNotice, #noSlotSelectedNotice, #noGearSelectedNotice, #noStockNotice, #noStockSelectedNotice {
+    font-size: 50px;
+    align-self: center;
+    flex: 1 1 auto; /* Flexible width */
+    max-width: 100%; /* Prevent overflow */
+    word-wrap: break-word; /* Ensure text wraps */
+    position: absolute;
+    padding: 50px;
+}
+#imgQuantity, #imgQuantityGear {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25%;
+    aspect-ratio: 1/1;
+    border-left: solid;
+    border-bottom: solid;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    background-color: #350834;
+}
+#itemImage, #gearImage {
+    object-fit: contain;
+    padding: 16px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    margin: 0;
+}
+#amountOwned, #gearAmountOwned {
+    font-size: 48px;
+    position: absolute;
+    right: 6px;
+    bottom: 0;
+    text-align: right;
+    padding: 2%;
+}
+#collectName, #collectNameGear {
+    width: 75%;
+    box-sizing: border-box;
+    text-align: center;
+    display:grid;
+    place-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+#itemCollection, #gearCollection {
+    padding-top: 16px;
+}
+#itemCollection {
+    font-size: 40px;
+    padding-bottom: 8px;
+}
+#gearCollection {
+    font-size: 28px;
+    padding-bottom: 4px;
+}
+#itemName, #gearName {
+    padding-bottom: 8px;
+}
+#itemName {
+    font-size: 64px;
+    padding-top: 8px;
+}
+#gearName {
+    font-size: 50px;
+}
+#otherInfo, #otherInfoGear {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#itemRarity, #gearRarity {
+    font-size: 50px;
+    padding-top: 30px;
+}
+#itemValue, #gearValue {
+    font-size: 36px;
+}
+#itemDescription, #gearDescription {
+    width: 90%;
+}
+#itemDescription {
+    font-size: 40px;
+    padding: 66px 5% 5% 5%;
+}
+#gearDescription {
+    font-size: 28px;
+    padding: 48px 5% 5% 5%;
+}
+
+#equippedGear {
+    border-style: solid;
+    height:100%;
+    aspect-ratio: 1/1;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+}
+#gearPortrait {
+    object-fit: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.gearIcon {
+    width: 10.5%;
+    height: 10.5%;
+    position: absolute;
+    box-sizing: border-box;
+}
+#accessoryIcon {
+    left: 5.5%;
+    top: 37.25%;
+}
+#weaponIcon {
+    left: 16.1%;
+    top: 16.25%;
+}
+#headwearIcon {
+    left: 56%;
+    top: 8.6%;
+}
+#catalystIcon {
+    left: 68.6%;
+    top: 24.85%;
+}
+#bodywearIcon {
+    left: 67.65%;
+    top: 73.65%;
+}
+#signatureIcon {
+    left: 79.8%;
+    top: 87%;
+}
+#selectedSlot, #selectedGear {
+    border-style: solid;
+    height:100%;
+    aspect-ratio: 3/4;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+}
+#gearList {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.gearTypeList {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+.gearRow {
+    width: 100%;
+    border-bottom: solid;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    flex-direction: row;
+    display: flex;
+}
+.gearPNG {
+    padding: 16px;
+    object-fit: contain;
+}
+.gearInfoList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+.gearName {
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+}
+.gearCollection {
+    font-size: 30px;
+    padding: 10px 0 0 0;
+    margin: 0;
+}
+.gearStatsTable {
+    width: 90%;
+    padding: 0 5% 5% 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+.gearStatsTable div {
+    display: flex;
+    flex-direction: column;
+}
+.gearStatsTable span {
+    font-size: 28px;
+}
+.gstHeader {
+    font-size: 32px;
+    border-bottom: solid;
+}
+#statsTitle {
+    padding-top: 60px;
+    font-size: 32px;
+}
+#setInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    padding: 0 5% 5% 5%;
+}
+#selectedGearButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 30px;
+}
+#equipButton {
+    font-family:VT323;
+    background: none;
+    outline: none;
+    border: none;
+    padding: 10px;
+    color: #fce5fa;
+    text-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+}
+#equipButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #fce5fa;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+}
+#userStatsTable {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: auto;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    border-style: solid;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+#ownedStocks {
+    height: 100%;
+    width: 35%;
+    border-style: solid;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow: auto;
+}
+#stockInfo {
+    height: 100%;
+    width: 65%;
+    border-style: solid;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.stockRow {
+    width: 100%;
+    height: 160px;
+    border-bottom: solid;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.stockPNG {
+    padding: 16px;
+    object-fit: contain;
+}
+.stockInfoRow {
+    width: calc(100% - 160px);
+    display: flex;
+    flex-direction: row;
+}
+.stockTicker {
+    padding-left: 16px;
+    font-size: 40px;
+    margin: 0;
+}
+.stockName {
+    font-size: 40px;
+    position: absolute;
+    right: 32px;
+    margin: 0;
+}
+.stockCategory {
+    padding-left: 16px;
+    padding-top: 8px;
+    margin: 0;
+}
+.stockQuantity {
+    position: absolute;
+    padding-top: 8px;
+    right: 32px;
+    margin: 0;
+}
+.stockValue {
+    font-size: 32px;
+    margin: 0;
+}
+.stockValueRow {
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 160px);
+    display: flex;
+    flex-direction: row;
+}
+#stockChart {
+    width: 100%;
+    height: 100%;
+}
+#stockData {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.stockDataRow {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid;
+}
+.stockDataInfo {
+    font-size: 40px;
+    margin: 0;
+    padding: 16px 5% 16px 5%;
+}
+.stockDataRadioRow {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-end;
+}
+.stockDataRadio {
+    font-size: 40px;
+    margin: 0;
+    padding: 8px;
+}
+.stockDataRadio input[type="radio"] {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    margin: 0;
+}
+.stockDataRadio:has(input:checked) {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #fce5fa;
+    box-shadow: 1px 1px 2px #fcbaf4, 0 0 1em #fcbaf4, 0 0 0.2em #fcbaf4;
+}
+#chartContainer {
+    height: 78%;
+    width: 100%;
+}

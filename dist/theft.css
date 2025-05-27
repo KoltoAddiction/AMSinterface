@@ -1,0 +1,193 @@
+#theftScreen {
+    background-color:#2f3508;
+}
+#theftContent {
+    color: #f8fce5;
+    text-shadow: 1px 1px 2px #f8fcba, 0 0 1em #f8fcba, 0 0 0.2em #f8fcba;
+}
+#theftBackButton {
+    color: #f8fce5;
+    text-shadow: 1px 1px 2px #f8fcba, 0 0 1em #f8fcba, 0 0 0.2em #f8fcba;
+}
+#theftBackButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #f8fce5;
+    box-shadow: 1px 1px 2px #f8fcba, 0 0 1em #f8fcba, 0 0 0.2em #f8fcba;
+}
+#theftLogout {
+    filter:hue-rotate(69deg)
+}
+#theftReauth:hover {
+    background-color: #f8fce5;
+    box-shadow: 1px 1px 2px #f8fcba, 0 0 1em #f8fcba, 0 0 0.2em #f8fcba;
+}
+#theftMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 5%;
+}
+#potentialVictims {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 30%;
+    border: solid;
+    box-shadow: 1px 1px 2px #f8fcba, 0 0 1em #f8fcba, 0 0 0.2em #f8fcba;
+    overflow-y: scroll;
+}
+.userRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.userRowImg {
+    width: 128px;
+    height: 128px;
+    padding: 8px;
+}
+.userRowName {
+    font-size: 54px;
+    padding-right: 8px;
+    width: -webkit-calc(100% - 144px);
+    width:    -moz-calc(100% - 144px);
+    width:         calc(100% - 144px);
+}
+#accountSelection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 30%;
+    gap: 4%;
+}
+.account {
+    width: 100%;
+    height: 48%;
+    border: solid;
+    box-shadow: 1px 1px 2px #f8fcba, 0 0 1em #f8fcba, 0 0 0.2em #f8fcba;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-color: #f8fce5;
+}
+.account * {
+    margin: 0;
+}
+.accountTitle {
+    padding-top: 12px;
+}
+.accountInfo {
+    font-size: 40px;
+    padding-top: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#theftInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 30%;
+    border: solid;
+    box-shadow: 1px 1px 2px #f8fcba, 0 0 1em #f8fcba, 0 0 0.2em #f8fcba;
+}
+#theftInfo * {
+    margin: 0;
+}
+#stealButton {
+    height: 64px;
+    color: #f8fce5;
+    font-family:VT323;
+    background: none;
+    outline: none;
+    border: none;
+    text-shadow: 1px 1px 2px #f8fcba, 0 0 1em #f8fcba, 0 0 0.2em #f8fcba;
+    position: absolute;
+    bottom: 48px;
+    border-radius: 4px;
+    right: 15%;
+    transform: translateX(50%);
+}
+#stealButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #f8fce5;
+    box-shadow: 1px 1px 2px #f8fcba, 0 0 1em #f8fcba, 0 0 0.2em #f8fcba;
+}
+.bigInfo {
+    font-size: 64px;
+    padding: 32px;
+}
+.medInfo {
+    font-size: 58px;
+    padding-top: 8px;
+}
+.smallInfo {
+    padding-top: 32px;
+    font-size: 32px;
+}
+#resultModal {
+    width: 800px;
+    padding-bottom: 120px;
+    background-color: #2f3508;
+    box-shadow: 1px 1px 2px #f8fcba, 0 0 1em #f8fcba, 0 0 0.2em #f8fcba;
+    border-style: solid;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 9;
+}
+#modalOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* dark semi-transparent */
+    z-index: 8;
+}
+.modal-content {
+    height: auto;
+}
+.modal-content h1 {
+    width: 100%;
+    font-size: 86px;
+    text-align: center;
+}
+.modal-content h2 {
+    margin: 0;
+    width: 100%;
+    font-size: 64px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+.modal-content h3 {
+    margin: 0;
+    width: 100%;
+    font-size: 42px;
+    text-align: center;
+}
+#claimButton {
+    font-family:VT323;
+    font-size: 76px;
+    background: none;
+    outline: none;
+    border: none;
+    color: #f8fce5;
+    text-shadow: 1px 1px 2px #f8fcba, 0 0 1em #f8fcba, 0 0 0.2em #f8fcba;
+    border-radius: 4px;
+    height: 100px;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+}
+#claimButton:hover {
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-color: #f8fce5;
+    box-shadow: 1px 1px 2px #f8fcba, 0 0 1em #f8fcba, 0 0 0.2em #f8fcba;
+}
