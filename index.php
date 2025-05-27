@@ -11,23 +11,22 @@ setcookie("lastPage", "index");
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-        <link href="../dist/style.css" rel="stylesheet">
-        <link href="../dist/index.css" rel="stylesheet">
-        <script type="module" src="index.js"></script>
-        <link rel="icon" href="../assets/favicon.png">
+        <link href="dist/style.css" rel="stylesheet">
+        <link href="dist/index.css" rel="stylesheet">
+        <link rel="icon" href="assets/favicon.png">
         <title>[ams_interface]</title>
     </head>
     <body>
         <div class="screen" id='indexScreen'>
-            <img src="../assets/scanlines.png" id="scan" class="noselect">
-            <img src="../assets/bezel.png" id="bezel" class="noselect">
+            <img src="assets/scanlines.png" id="scan" class="noselect">
+            <img src="assets/bezel.png" id="bezel" class="noselect">
             <div class="content" id="indexContent">
 
                 <div class="menu" id="indexMenu">
                     <div id="loginbox">
                             <span class="indexh1">[ asylum management service ]</span>
-                            <a href="init-oauth.php" id="loginbutton">
-                                <img id="discordlogo" src="../assets/discordlogo.png"></img>
+                            <a href="src/init-oauth.php" id="loginbutton">
+                                <img id="discordlogo" src="assets/discordlogo.png"></img>
                                 <input type="button" id="loginbuttoninput" value="[ login with discord ]"></input>
                             </a>
                     </div>
