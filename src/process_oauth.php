@@ -5,7 +5,7 @@ ini_set('log_errors', 1);
 error_reporting(E_ALL);
 session_start();
 include('db.php');
-require_once('../../../config.php');
+require_once('/var/config.php');
 
 $_SESSION['current_version'] = "0.0.13";
 

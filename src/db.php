@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once('../../../config.php');
+require_once('/var/config.php');
 
 try {
   $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
@@ -12,8 +12,9 @@ try {
 
 //  echo "Connected successfully";
 }
-catch(PDOException $e){
-  echo "Connection failed: " . $e->getMessage();
+catch (PDOException $e) {
+    error_log("PDO Error: " . $e->getMessage());
+    echo "Database error occurred.";
 }
 
 function setUserUpdateTime($pdo, $record_id) {
