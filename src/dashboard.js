@@ -72,41 +72,90 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("dashboardReauth").addEventListener("mouseover", playHoverSound);
     document.getElementById("dashboardLogout").addEventListener("mouseover", playHoverSound);
 
-    document.getElementById("workButton").addEventListener("mouseover", workHover);
-    document.getElementById("workButton").addEventListener("click", workClick);
+    try{
+        document.getElementById("workButton").addEventListener("mouseover", workHover);
+        document.getElementById("workButton").addEventListener("click", workClick);
+    } catch {
 
-    document.getElementById("accountsButton").addEventListener("mouseover", accountsHover);
-    document.getElementById("accountsButton").addEventListener("click", accountsClick);
+    }
+    
+    try {
+        document.getElementById("accountsButton").addEventListener("mouseover", accountsHover);
+        document.getElementById("accountsButton").addEventListener("click", accountsClick);
+    } catch {
 
-    document.getElementById("harvestButton").addEventListener("mouseover", harvestHover);
-    document.getElementById("harvestButton").addEventListener("click", harvestClick);
+    }
+    
+    try {
+        document.getElementById("harvestButton").addEventListener("mouseover", harvestHover);
+        document.getElementById("harvestButton").addEventListener("click", harvestClick);
+    } catch {
 
-    document.getElementById("theftButton").addEventListener("mouseover", theftHover);
-    document.getElementById("theftButton").addEventListener("click", theftClick);
+    }
+    
+    try {
+        document.getElementById("theftButton").addEventListener("mouseover", theftHover);
+        document.getElementById("theftButton").addEventListener("click", theftClick);
+    } catch {
 
-    document.getElementById("bountiesButton").addEventListener("mouseover", bountiesHover);
-    document.getElementById("bountiesButton").addEventListener("click", bountiesClick);
+    }
+    
+    try {
+        document.getElementById("bountiesButton").addEventListener("mouseover", bountiesHover);
+        document.getElementById("bountiesButton").addEventListener("click", bountiesClick);
+    } catch {
 
-    document.getElementById("grandHeistButton").addEventListener("mouseover", grandHeistHover);
-    document.getElementById("grandHeistButton").addEventListener("click", displayComingSoon);
+    }
+    
+    try {
+        document.getElementById("grandHeistButton").addEventListener("mouseover", grandHeistHover);
+        document.getElementById("grandHeistButton").addEventListener("click", displayComingSoon);
+    } catch {
 
-    document.getElementById("inventoryButton").addEventListener("mouseover", inventoryHover);
-    document.getElementById("inventoryButton").addEventListener("click", inventoryClick);
+    }
+    
+    try {
+        document.getElementById("inventoryButton").addEventListener("mouseover", inventoryHover);
+        document.getElementById("inventoryButton").addEventListener("click", inventoryClick);
+    } catch {
 
-    document.getElementById("marketButton").addEventListener("mouseover", marketHover);
-    document.getElementById("marketButton").addEventListener("click", marketClick)
+    }
+    
+    try {
+        document.getElementById("marketButton").addEventListener("mouseover", marketHover);
+        document.getElementById("marketButton").addEventListener("click", marketClick);
+    } catch {
 
-    document.getElementById("blackMarketButton").addEventListener("mouseover", blackMarketHover);
-    document.getElementById("blackMarketButton").addEventListener("click", blackmarketClick);
+    }
+    
+    try {
+        document.getElementById("blackMarketButton").addEventListener("mouseover", blackMarketHover);
+        document.getElementById("blackMarketButton").addEventListener("click", blackmarketClick);
+    } catch {
 
-    document.getElementById("leaderboardButton").addEventListener("mouseover", leaderboardHover);
-    document.getElementById("leaderboardButton").addEventListener("click", leaderboardClick)
+    }
+    
+    try {
+        document.getElementById("leaderboardButton").addEventListener("mouseover", leaderboardHover);
+        document.getElementById("leaderboardButton").addEventListener("click", leaderboardClick);
+    } catch {
 
-    document.getElementById("prestigeButton").addEventListener("mouseover", prestigeHover);
-    document.getElementById("prestigeButton").addEventListener("click", displayComingSoon);
+    }
+    
+    try {
+        document.getElementById("prestigeButton").addEventListener("mouseover", prestigeHover);
+        document.getElementById("prestigeButton").addEventListener("click", displayComingSoon);
+    } catch {
 
-    document.getElementById("closeCS").addEventListener("click", closeCSPopup);
-    document.getElementById("closeBMY").addEventListener("click", closeBMYPopup);
+    }
+    
+    try {
+        document.getElementById("closeCS").addEventListener("click", closeCSPopup);
+        document.getElementById("closeBMY").addEventListener("click", closeBMYPopup);
+    } catch {
+
+    }
+    
 
 })
 

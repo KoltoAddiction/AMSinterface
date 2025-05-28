@@ -160,6 +160,8 @@ setcookie("lastPage", "work");
                                         } else if (array_key_exists($numberTag, $prestigesArray)) {
                                             $requiredPrestige = $prestigesArray[$nextTag];
                                             $usePrestige = true;
+                                        } else if ($jobTag == "N/A") {
+                                            $requiredLevel = 0;
                                         }
 
                                         if($user_data_db['prestigeTier'] < $requiredPrestige && $usePrestige == true) {

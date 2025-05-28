@@ -13,7 +13,7 @@ function updateUser($pdo) {
 
     setUserUpdateTime($pdo, $dbID);
 
-    $dbData = getUserFromDatabase($pdo, $discord_id);
+    $dbData = getUserByUID($pdo, $dbID);
 
     $last_updated = strtotime($dbData['last_update']);
     $now = time();
@@ -29,7 +29,9 @@ function updateUser($pdo) {
     $job_id = $dbData['job_id'];
     $job_info = getJobInfo($pdo, $job_id);
 
-    $deservedIncome = floor($dis_d*$job_info['income']);
+    $income = (int)$job_info['income'];
+
+    $deservedIncome = floor($dis_d*$income);
     auditAccount($pdo, $dbID, 0, $deservedIncome);
 
     $progress1 = 0;
