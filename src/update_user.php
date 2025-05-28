@@ -7,8 +7,6 @@ if (session_status() === PHP_SESSION_NONE) {
 require_once('db.php');
 require_once('calculate_odds.php');
 
-updateUser($pdo);
-
 function updateUser($pdo) {
 
     extract($_SESSION['userData']);
@@ -19,8 +17,6 @@ function updateUser($pdo) {
     $now = time();
 
     $dis_s = $now - $last_updated;
-    $dis_m = ($dis_s/60);
-    $dis_h = ($dis_s/3600);
     $dis_d = ($dis_s/86400);
     $dis_y = ($dis_s/31536000);
 

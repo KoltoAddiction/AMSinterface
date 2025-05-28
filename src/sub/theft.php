@@ -7,13 +7,14 @@ if (session_status() === PHP_SESSION_NONE) {
 include('../db.php');
 include('../update_user.php');
 
-updateUser($pdo);
-$theftStatus = updateUserTheft($pdo);
-
 if(!$_SESSION['logged_in']){
     header('Location: ../error.php');
     exit();
 }
+
+updateUser($pdo);
+$theftStatus = updateUserTheft($pdo);
+
 extract($_SESSION['userData']);
 
 if(!in_array('694979412268941413', $roles)) {

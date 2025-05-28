@@ -7,12 +7,12 @@ if (session_status() === PHP_SESSION_NONE) {
 include('../db.php');
 include('../update_user.php');
 
-updateUser($pdo);
-
 if(!$_SESSION['logged_in']){
     header('Location: ../error.php');
     exit();
 }
+
+updateUser($pdo);
 extract($_SESSION['userData']);
 
 if(!in_array('732204665319718972', $roles)) {

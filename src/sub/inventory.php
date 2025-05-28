@@ -7,12 +7,13 @@ if (session_status() === PHP_SESSION_NONE) {
 include('../db.php');
 include('../update_user.php');
 
-updateUser($pdo);
-
 if(!$_SESSION['logged_in']){
     header('Location: ../error.php');
     exit();
 }
+
+updateUser($pdo);
+
 extract($_SESSION['userData']);
 
 $user_data_db = getUserFromDatabase($pdo,$discord_id);
@@ -118,6 +119,11 @@ $userStats = calculateStats($_SESSION['user_inventory'], $equippedItems);
                                 <h2 class = "itemInfo" id="itemRarity">Unknown Rarity</h2>
                                 <h2 class = "itemInfo" id="itemValue">Approx. Value: Unknown</h2>
                                 <h2 class = "itemInfo" id="itemDescription">Unknown Description</h3>
+                            </div>
+                            <div id="buttons">
+                                <input type="text" placeholder="#" value="1" id="quanToSell">
+                                <input type="button" value="/sell" id="sellButton">
+                                <input type="button" value="/use" id="useButton">
                             </div>
                         </div>
                     </div>
@@ -280,6 +286,7 @@ $userStats = calculateStats($_SESSION['user_inventory'], $equippedItems);
                                 </div>
                                 <div id="selectedGearButtons">
                                     <input type="button" id="equipButton" value="> equip">
+                                    <input type="button" id="gearSellButton" value="> sell">
                                 </div>
                             </div>
                         </div>
@@ -340,6 +347,10 @@ $userStats = calculateStats($_SESSION['user_inventory'], $equippedItems);
                                     <canvas id="stockChart"></canvas>
                                 </div>
                                 <div class="stockDataRadioRow">
+                                    <div id="stockButtons">
+                                        <input type="text" placeholder="#" value="1" id="stockQuanToSell">
+                                        <input type="button" value="/sell" id="stockSellButton">
+                                    </div>
                                     <label class="stockDataRadio">
                                         <input class="timelineInput" type="radio" name="timeRange" value="day"> /day
                                     </label>

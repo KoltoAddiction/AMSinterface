@@ -7,7 +7,7 @@ session_start();
 include('db.php');
 require_once('/var/config.php');
 
-$_SESSION['current_version'] = "0.0.14";
+$_SESSION['current_version'] = "0.0.15";
 
 if(!isset($_GET['code'])){
     echo 'no code';

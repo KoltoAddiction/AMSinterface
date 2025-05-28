@@ -12,12 +12,9 @@ if(!$_SESSION['logged_in']){
 
 extract($_SESSION['userData']);
 
-$user_data_db = getUserFromDatabase($pdo,$discord_id);
-$db_id = $user_data_db['id'];
-
-getInventory($pdo, $db_id);
-getStockInventory($pdo, $db_id);
-getEquippedItems($pdo, $db_id);
+getInventory($pdo, $dbID);
+getStockInventory($pdo, $dbID);
+getEquippedItems($pdo, $dbID);
 
 setcookie("lastPage", "getInventory");
 
@@ -25,10 +22,10 @@ if (isset($_COOKIE['lastPage'])) {
     if ($_COOKIE['lastPage'] == "bounties") {
         header('Location: bounties.php');
     } else if ($_COOKIE['lastPage'] == "market") {
-        getMarket($pdo, $db_id);
+        getMarket($pdo, $dbID);
         header('Location: market.php');
     } else if ($_COOKIE['lastPage'] == "blackmarket") {
-        getMarket($pdo, $db_id);
+        getMarket($pdo, $dbID);
         header('Location: blackmarket.php');
     } else {
         header('Location: inventory.php');

@@ -3,6 +3,10 @@ var chartSetUp = false;
 var canvas;
 var ctx;
 
+var currentItemID;
+var currentGearID;
+var currentStockID;
+
 function playClickSound() {
     var clickSound = document.getElementById("clicksound");
     clickSound.currentTime = 0;
@@ -57,6 +61,8 @@ function viewItem(itemID) {
     let selItemInfo = document.getElementById("selItemInfo");
     noSelItemInfo.style.display = "none";
     selItemInfo.style.display = "flex";
+
+    currentItemID = jsonData.item_id;
 
     const rarities = ["Common", "Rare", "Epic", "Legendary", "Unique"]
     let itemRarity = parseInt(jsonData.rarity, 10);
@@ -116,6 +122,8 @@ function viewGear(itemID) {
     let selectedGearInfo = document.getElementById("selectedGearInfo");
     noGearSelectedNotice.style.display = "none";
     selectedGearInfo.style.display = "flex";
+
+    currentGearID = jsonData.item_id;
 
     const rarities = ["Common", "Rare", "Epic", "Legendary", "Unique"]
     const gearTypes = ["Accessory", "Weapon", "Headwear", "Catalyst", "Bodywear", "Signature"]
@@ -330,6 +338,8 @@ function viewStock(stockData, stockHistory, ctx) {
     let stockDataValue = document.getElementById("stockDataValue");
     let stockDataCategory = document.getElementById("stockDataCategory");
 
+    currentStockID = stockData.id;
+
     stockDataTicker.innerHTML = "(" + stockData.ticker + ")";
     stockDataName.innerHTML = stockData.name;
     stockDataValue.innerHTML = "$" + stockData.current_value;
@@ -354,6 +364,23 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("inventoryReauth").addEventListener("mouseover", playHoverSound);
     document.getElementById("inventoryLogout").addEventListener("mouseover", playHoverSound);
     document.getElementById("inventoryBackButton").addEventListener("click", backButton);
+
+    document.getElementById("sellButton").addEventListener("click", function(){
+        let quantityField = document.getElementById("quanToSell");
+        var quantity = quantityField.value;
+        console.log(currentItemID);
+
+        sellItem(currentItemID, quantity);
+    });
+    document.getElementById("gearSellButton").addEventListener("click", function(){
+        sellItem(currentGearID, 1);
+    });
+    document.getElementById("stockSellButton").addEventListener("click", function(){
+        let quantityField = document.getElementById("stockQuanToSell");
+        var quantity = quantityField.value;
+
+        sellStock(currentStockID, quantity);
+    });
     
     const itemsButton = document.getElementById("itemsButton");
     const gearButton = document.getElementById("gearButton");
@@ -551,3 +578,65 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 })
+
+function sellItem(itemID, quantity) {
+        const url = "../db.php";
+
+    // Prepare the data to send
+    const data = new URLSearchParams({
+        purpose: "sellItem",
+        item_id: itemID,
+        quantity: quantity,
+    });
+
+    // Send the AJAX request using Fetch API
+    fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: data.toString(),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Server error: ${response.status}`);
+        }
+        return response.text();
+    })
+    .then(result => {
+        console.log("Server response:", result);
+        window.location.reload();
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+}
+
+function sellStock(stockID, quantity) {
+        const url = "../db.php";
+
+    // Prepare the data to send
+    const data = new URLSearchParams({
+        purpose: "sellStock",
+        stock_id: stockID,
+        quantity: quantity,
+    });
+
+    // Send the AJAX request using Fetch API
+    fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: data.toString(),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Server error: ${response.status}`);
+        }
+        return response.text();
+    })
+    .then(result => {
+        console.log("Server response:", result);
+        window.location.reload();
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+}

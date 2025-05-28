@@ -7,14 +7,15 @@ if (session_status() === PHP_SESSION_NONE) {
 include('../db.php');
 include('../update_user.php');
 
-updateUser($pdo);
-$bountyStatus = updateUserBounty($pdo);
-
 if(!$_SESSION['logged_in']){
     header('Location: ../error.php');
     exit();
 }
+
 extract($_SESSION['userData']);
+
+updateUser($pdo);
+$bountyStatus = updateUserBounty($pdo);
 
 if(!in_array('732204665319718972', $roles)) {
     header('Location: ../dashboard.php');

@@ -35,7 +35,7 @@ function updateJobItemProgress($pdo, $record_id, $p1, $p2, $p3) {
 }
 
 function auditInventory($pdo, $record_id, $item_id, $quantity){
-    $stmt = $pdo->prepare("SELECT quantity FROM inventory WHERE user_id = :user_id and item_id = :item_id");
+    $stmt = $pdo->prepare("SELECT * FROM inventory WHERE user_id = :user_id AND item_id = :item_id");
     $stmt->execute(['user_id' => $record_id, 'item_id' => $item_id]);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -259,6 +259,7 @@ function getInventory($pdo, $record_id) {
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $_SESSION["user_inventory"] = $rows;
         } else {
+            $_SESSION["user_inventory"] = [];
             echo "No data found for user.";
         }
     } else {
@@ -277,6 +278,7 @@ function getStockInventory($pdo, $record_id) {
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $_SESSION["user_stocks"] = $rows;
         } else {
+            $_SESSION["user_stocks"] = [];
             echo "No data found for user.";
         }
     } else {
@@ -964,6 +966,35 @@ function purchaseItem($pdo, $item_id, $quantity, $account) {
     }
 }
 
+function sellItem($pdo, $item_id, $quantity) {
+    extract($_SESSION['userData']);
+
+    if(auditInventory($pdo, $dbID, $item_id, -$quantity) == true) {
+        $itemInfo = getItemInfo($pdo, $item_id);
+        $value = $itemInfo['value'];
+        $total = $value * $quantity;
+
+        if($itemInfo['evil'] == 0) {
+            $account = 0;
+        } else if ($itemInfo['evil'] == 1) {
+            $account = 2;
+        }
+        auditAccount($pdo, $dbID, $account, $total);
+        $shopQuantity = $itemInfo['shop_quantity'];
+        
+        if ($shopQuantity == -1) {
+            echo "Transaction completed successfully.";
+        } else {
+            $finalQuantity = $shopQuantity + $quantity;
+            $stmt = $pdo->prepare("UPDATE items SET shop_quantity = :fq WHERE id = :item_id");
+            $stmt->execute(['fq' => $finalQuantity, 'item_id' => $item_id]);
+            echo "Transaction completed successfully.";
+        }
+    } else {
+        echo "Not enough items to sell!";
+    }
+    
+}
 
 function purchaseStock($pdo, $stock_id, $quantity) {
     extract($_SESSION['userData']);
@@ -983,6 +1014,18 @@ function purchaseStock($pdo, $stock_id, $quantity) {
         echo "User is too broke!";
     }
 
+}
+
+function sellStock($pdo, $stock_id, $quantity) {
+    extract($_SESSION['userData']);
+    
+    if (auditStockInventory($pdo, $dbID, $stock_id, -$quantity) == true) {
+        $stockRow = getStockInfo($pdo, $stock_id);
+        $value = $stockRow['current_value'];
+        $total = ($value * $quantity);
+
+        auditAccount($pdo, $dbID, 0, $total);
+    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -1012,6 +1055,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         claimBounty($pdo);
     } else if ($_POST['purpose'] === "claimTheft") {
         claimTheft($pdo);
+    } else if ($_POST['purpose'] === "sellItem") {
+        sellItem($pdo, $_POST['item_id'], $_POST['quantity']);
+    } else if ($_POST['purpose'] === "sellStock") {
+        sellStock($pdo, $_POST['stock_id'], $_POST['quantity']);
     }
 }
 

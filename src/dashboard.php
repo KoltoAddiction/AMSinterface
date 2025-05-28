@@ -3,8 +3,6 @@
 include('db.php');
 include('update_user.php');
 
-updateUser($pdo);
-
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -13,6 +11,8 @@ if(!$_SESSION['logged_in']){
     header('Location: error.php');
     exit();
 }
+
+updateUser($pdo);
 extract($_SESSION['userData']);
 
 $avatar_url = "https://cdn.discordapp.com/avatars/$discord_id/$avatar.png";

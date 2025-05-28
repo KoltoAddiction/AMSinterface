@@ -3,11 +3,11 @@
 include('../db.php');
 include('../update_user.php');
 
-updateUser($pdo);
-
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
+updateUser($pdo);
 
 if(!$_SESSION['logged_in']){
     header('Location: ../error.php');

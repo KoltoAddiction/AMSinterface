@@ -7,13 +7,13 @@ if (session_status() === PHP_SESSION_NONE) {
 include('../db.php');
 include('../update_user.php');
 
-updateUser($pdo);
-
 if(!$_SESSION['logged_in']){
     header('Location: ../error.php');
     exit();
 }
 extract($_SESSION['userData']);
+
+updateUser($pdo);
 
 $user_data_db = getUserFromDatabase($pdo,$discord_id);
 $db_id = $user_data_db['id'];
