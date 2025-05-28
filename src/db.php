@@ -117,8 +117,12 @@ function auditAccount($pdo, $record_id, $account, $amount) {
 
     $newMoney = $curMoney + $amount;
     $updateStmt = $pdo->prepare("UPDATE users SET $column = :bal WHERE id = :user_id");
-    $updateStmt->execute(['bal' => $newMoney, 'user_id' => $record_id]);
-    return true;
+    if($updateStmt->execute(['bal' => $newMoney, 'user_id' => $record_id])) {
+        return true;
+    } else {
+        return false;
+    }
+    
 
 }
 

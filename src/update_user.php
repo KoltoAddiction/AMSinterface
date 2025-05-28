@@ -7,11 +7,11 @@ if (session_status() === PHP_SESSION_NONE) {
 require_once('db.php');
 require_once('calculate_odds.php');
 
+updateUser($pdo);
+
 function updateUser($pdo) {
 
     extract($_SESSION['userData']);
-
-    setUserUpdateTime($pdo, $dbID);
 
     $dbData = getUserByUID($pdo, $dbID);
 
@@ -73,6 +73,8 @@ function updateUser($pdo) {
     $balHighYield = $dbData['balHighYield'];
     $interest = ($balHighYield * exp($dis_y)) - $balHighYield;
     auditAccount($pdo, $dbID, 3, $interest);
+
+    setUserUpdateTime($pdo, $dbID);
 
 }
 
