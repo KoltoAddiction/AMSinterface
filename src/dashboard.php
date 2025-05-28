@@ -206,7 +206,7 @@ $userJobInfo = getJobInfo($pdo, $userJobId)
                 </div>
 
                 <div id="userinfo">
-                    <img id="rankicon" src="../assets/ranks/<?php echo $role;?>">
+                    <img id="rankicon" src="../assets/ranks/<?php echo $role;?>.png">
                     <h1 id="rankname">[ <?php echo $role;?> ]</h1>
                     <h3 id="level">lvl: <?php echo $level;?></h3>
                     <progress id="levelprogress" max="1240055" value="<?php echo $exp;?>"></progress>

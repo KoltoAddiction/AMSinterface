@@ -13,7 +13,22 @@ setcookie("lastPage", "index");
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <link href="../dist/style.css" rel="stylesheet">
         <link href="../dist/index.css" rel="stylesheet">
-        <script type="module" src="index.js"></script>
+        <script>
+            function scalePage() {
+            const designWidth = 1920;
+            const designHeight = 966;
+            const screen = document.getElementsByClassName("screen")[0];
+
+            let scaleX = window.innerWidth / designWidth;
+            let scaleY = window.innerHeight / designHeight;
+            let scale = Math.min(scaleX, scaleY);
+
+            screen.style.transform = `translate(-50%, -50%) scale(${scale})`;
+            }
+
+            window.addEventListener('resize', scalePage);
+            window.addEventListener('load', scalePage);
+        </script>
         <link rel="icon" href="../assets/favicon.png">
         <title>[ams_interface]</title>
     </head>
@@ -26,7 +41,7 @@ setcookie("lastPage", "index");
                 <div class="menu" id="indexMenu">
                     <div id="loginbox">
                             <span class="indexh1">[ authentication failed! ]</span>
-                            <a href="index.php" id="loginbutton">
+                            <a href="../index.php" id="loginbutton">
                                 <input type="button" id="loginbuttoninput" value="[ return to login ]"></input>
                             </a>
                     </div>

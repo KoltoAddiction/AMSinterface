@@ -14,6 +14,22 @@ setcookie("lastPage", "index");
         <link href="dist/style.css" rel="stylesheet">
         <link href="dist/index.css" rel="stylesheet">
         <link rel="icon" href="assets/favicon.png">
+        <script>
+            function scalePage() {
+            const designWidth = 1920;
+            const designHeight = 966;
+            const screen = document.getElementsByClassName("screen")[0];
+
+            let scaleX = window.innerWidth / designWidth;
+            let scaleY = window.innerHeight / designHeight;
+            let scale = Math.min(scaleX, scaleY);
+
+            screen.style.transform = `translate(-50%, -50%) scale(${scale})`;
+            }
+
+            window.addEventListener('resize', scalePage);
+            window.addEventListener('load', scalePage);
+        </script>
         <title>[ams_interface]</title>
     </head>
     <body>

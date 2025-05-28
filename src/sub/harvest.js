@@ -16,6 +16,20 @@ function reAuthButton() {
     window.location.href = "../init-oauth.php";
 }
 
+function scalePage() {
+const designWidth = 1920;
+const designHeight = 966;
+const screen = document.getElementsByClassName("screen")[0];
+
+let scaleX = window.innerWidth / designWidth;
+let scaleY = window.innerHeight / designHeight;
+let scale = Math.min(scaleX, scaleY);
+
+screen.style.transform = `translate(-50%, -50%) scale(${scale})`;
+}
+
+window.addEventListener('resize', scalePage);
+window.addEventListener('load', scalePage);
 
 document.addEventListener("DOMContentLoaded", () => {
 

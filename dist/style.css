@@ -14,11 +14,14 @@
 }
 
 .screen{
-    position: relative;
-    width: 100vw;
-    height: 100vh;
     overflow: hidden;
     display:grid;
+    width: 1920px;
+    height: 966px;
+    transform-origin: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
 #scan, #bezel{
